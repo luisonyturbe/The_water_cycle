@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía Interactiva: El Ciclo del Agua</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Montserrat:wght@400;600&display=swap');
+
+        :root {
+            --primary-blue: #0077b6;
+            --light-blue: #caf0f8;
+            --accent-yellow: #ffb703;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background: linear-gradient(180deg, #caf0f8 0%, #ffffff 100%);
+        }
+
+        h1, h2 {
+            font-family: 'League Spartan', sans-serif;
+        }
+
+        .cycle-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cycle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .wave-container {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave-container svg {
+            position: relative;
+            display: block;
+            width: calc(151% + 1.3px);
+            height: 100px;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .step-number {
+            background-color: var(--primary-blue);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col items-center justify-center text-center p-6 bg-gradient-to-b from-sky-400 to-sky-100">
+        <div class="animate-float mb-8">
+            <svg class="w-24 h-24 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.243 3.05a1 1 0 011.414 0l.707.707a1 1 0 11-1.414 1.414l-.707-.707a1 1 0 010-1.414zM17 10a1 1 0 011 1h1a1 1 0 110 2h-1a1 1 0 110-2h1zm-3.05 4.243a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM10 17a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.757 14.05a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM3 10a1 1 0 011-1H4a1 1 0 110 2H3a1 1 0 01-1-1zM5.757 5.95a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow-lg mb-4">EL CICLO DEL AGUA</h1>
+        <p class="text-xl md:text-2xl text-sky-900 max-w-2xl font-semibold">Un proceso infinito que sostiene la vida en la Tierra.</p>
+        <a href="#proceso" class="mt-10 bg-white text-sky-600 px-8 py-3 rounded-full font-bold hover:bg-sky-50 transition-colors shadow-lg">Comenzar el Viaje</a>
+    </header>
+
+    <!-- Main Content Section -->
+    <main id="proceso" class="max-w-6xl mx-auto py-20 px-6">
+        <h2 class="text-3xl font-bold text-center text-sky-800 mb-16">Las 4 Etapas del Viaje</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Etapa 1 -->
+            <div class="cycle-card bg-white p-8 rounded-2xl shadow-sm border border-sky-100">
+                <div class="step-number">1</div>
+                <h3 class="text-2xl font-bold text-sky-700 mb-4">Evaporación y Transpiración</h3>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    El sol calienta el agua de océanos y ríos, convirtiéndola en vapor. Las plantas también liberan vapor de agua a través de sus hojas en un proceso llamado transpiración.
+                </p>
+                <div class="flex items-center gap-4 text-sky-500 font-bold">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    <span>El vapor sube al cielo</span>
+                </div>
+            </div>
+
+            <!-- Etapa 2 -->
+            <div class="cycle-card bg-white p-8 rounded-2xl shadow-sm border border-sky-100">
+                <div class="step-number">2</div>
+                <h3 class="text-2xl font-bold text-sky-700 mb-4">Condensación</h3>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    El vapor de agua sube a la atmósfera, se enfría y se transforma en pequeñas gotas de líquido, formando las nubes que vemos en el cielo.
+                </p>
+                <div class="flex items-center gap-4 text-sky-500 font-bold">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                    <span>Se forman las nubes</span>
+                </div>
+            </div>
+
+            <!-- Etapa 3 -->
+            <div class="cycle-card bg-white p-8 rounded-2xl shadow-sm border border-sky-100">
+                <div class="step-number">3</div>
+                <h3 class="text-2xl font-bold text-sky-700 mb-4">Precipitación</h3>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    Cuando las gotas en las nubes se vuelven demasiado pesadas para flotar, caen a la tierra en forma de lluvia, nieve o granizo, dependiendo de la temperatura.
+                </p>
+                <div class="flex items-center gap-4 text-sky-500 font-bold">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    <span>Regresa a la tierra</span>
+                </div>
+            </div>
+
+            <!-- Etapa 4 -->
+            <div class="cycle-card bg-white p-8 rounded-2xl shadow-sm border border-sky-100">
+                <div class="step-number">4</div>
+                <h3 class="text-2xl font-bold text-sky-700 mb-4">Infiltración y Escorrentía</h3>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    El agua cae al suelo y se filtra hacia los acuíferos subterráneos o corre por la superficie creando ríos que desembocan nuevamente en los mares.
+                </p>
+                <div class="flex items-center gap-4 text-sky-500 font-bold">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <span>El ciclo comienza de nuevo</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Did you know section -->
+    <section class="bg-sky-600 text-white py-16 px-6 mt-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">💡 ¿Sabías qué?</h2>
+            <p class="text-2xl font-light italic leading-relaxed">
+                "El agua que bebes hoy es la misma que existía en la época de los dinosaurios. ¡Nunca sale de la Tierra, solo cambia de estado constantemente!"
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-10 text-center">
+        <p>Infografía Científica Digital</p>
+        <p class="text-sm mt-2">Creado para el proyecto escolar de Ciencias</p>
+    </footer>
+
+    <script>
+        // Optional: Simple scroll reveal animation logic could go here
+        document.querySelectorAll('.cycle-card').forEach((card, index) => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(30px)";
+            card.style.transition = "all 0.6s ease-out";
+            card.style.transitionDelay = (index * 0.2) + "s";
+        });
+
+        window.addEventListener('scroll', () => {
+            const triggerBottom = window.innerHeight / 5 * 4;
+            document.querySelectorAll('.cycle-card').forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if(cardTop < triggerBottom) {
+                    card.style.opacity = "1";
+                    card.style.transform = "translateY(0)";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
